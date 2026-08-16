@@ -14,9 +14,9 @@ function renderCatto(statusCode, statusMessage) {
             catto.naturalHeight > catto.naturalWidth
         );
 
-        document.querySelector(".catto-box").classList.remove("no-js")
+        document.querySelector(".catto-box").classList.remove("no-catto")
     });
 }
 
 const code = statuses.codes[Math.floor(Math.random() * statuses.codes.length)];
-setTimeout(() => renderCatto(code, statuses(code)), 500)
+renderCatto(code, statuses(code))

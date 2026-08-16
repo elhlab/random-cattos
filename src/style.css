@@ -16,12 +16,24 @@ a {
     color: inherit;
 }
 
-.no-js.catto-box {
+.no-catto {
     display: none;
 }
 
 .catto-box {
     text-align: center;
+    animation: bouncy-catto 500ms ease-out;
+}
+
+@keyframes bouncy-catto {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .catto-activity {
