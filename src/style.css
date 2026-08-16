@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font-size: 2em;
+    font-family:
+        Roboto Mono,
+        monospace;
+}
+
+a {
+    color: inherit;
+}
+
+.no-js.catto-box {
+    display: none;
+}
+
+.catto-box {
+    text-align: center;
+}
+
+.catto-activity {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+.clipped-catto {
+    clip-path: inset(0 0 23% 0);
+}
+
+.clipped-tall-catto {
+    clip-path: inset(0 0 19.7% 0);
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    font-size: 50%;
+}
+
+.made-by {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 25%;
+    opacity: 0.5;
+}
