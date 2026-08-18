@@ -52,5 +52,12 @@ function renderCatto(statusCode, statusMessage) {
     });
 }
 
-const code = getRandomStatusCode()
+const INITIAL_STATUS = process.env.INITIAL_HTTP_STATUS
+
+let code = getRandomStatusCode()
+if (INITIAL_STATUS !== null && location.hash === "") {
+    location.hash = process.env.INITIAL_STATUS_MESSAGE ?? "refresh"
+    code = parseInt(INITIAL_STATUS)
+}
+
 renderCatto(code, getStatusMessage(code))
