@@ -67,3 +67,7 @@ a {
     font-size: 25%;
     opacity: 0.5;
 }
+
+body {
+    visibility: visible;
+}
