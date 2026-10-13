@@ -1,27 +1,102 @@
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #000;
-    color: #fff;
-    font-size: 2em;
-    font-family:
-        Roboto Mono,
-        monospace;
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0
 }
 
 a {
     color: inherit;
 }
 
-.no-catto {
-    display: none;
+a:hover {
+    text-decoration: dashed underline;
 }
 
-.catto-box {
+html {
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    color: #fff;
+    background: #000;
+    font-family: "Roboto Mono", monospace;
+    line-height: 1.4;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    visibility: visible;
+}
+
+header {
+    display: flex;
+    justify-content: right;
+
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: left;
+
+    padding: clamp(0.5rem, 1vw, 1.5rem);
+}
+
+:root {
+    --small-size: clamp(0.5rem, 0.4rem + 2vw, 1rem);
+}
+
+small {
+    font-size: var(--small-size);
+}
+
+small.made-by {
+    color: lightgray;
+    font-size: calc(var(--small-size) * 0.8);
+}
+
+.catto-content {
+    padding: clamp(0.5rem, 2vw, 2rem);
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.catto-content h1 {
     text-align: center;
+
+    font-size: clamp(1.5rem, 1.5rem + 2vw, 5rem);
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+.catto-content h1 span {
+    display: inline-block;
+}
+
+.catto-space {
+    container-type: size;
+    display: grid;
+    place-items: center;
+}
+
+.contained-catto {
+    border: max(2px, 0.4cqmin) solid white;
+
+    aspect-ratio: var(--ratio);
+    width: min(100cqw, calc(100cqh * var(--ratio)));
+
+    position: relative;
+    overflow: hidden;
+
     animation: bouncy-catto 500ms ease-out;
 }
 
@@ -36,38 +111,22 @@ a {
     }
 }
 
-.catto-activity {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: normal;
-    text-transform: lowercase;
+/*
+ * The full image, scaled so the crop area fills the frame exactly,
+ * then shifted up and left so the crop lines up with the frame.
+ */
+.contained-catto img {
+    position: absolute;
+    width: calc(var(--w) / var(--cw) * 100%);
+    height: calc(var(--h) / var(--ch) * 100%);
+    left: calc(var(--left) / var(--cw) * -100%);
+    top: calc(var(--top) / var(--ch) * -100%);
 }
 
-.clipped-catto {
-    clip-path: inset(0 0 23% 0);
+.evasive-catto {
+    display: none;
 }
 
-.clipped-tall-catto {
-    clip-path: inset(0 0 19.7% 0);
-}
-
-.footer-note {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    margin: 20px;
-    font-size: 50%;
-}
-
-.made-by {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 20px;
-    font-size: 25%;
-    opacity: 0.5;
-}
-
-body {
-    visibility: visible;
+noscript {
+    display: contents;
 }
